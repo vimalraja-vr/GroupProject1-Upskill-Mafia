@@ -1,0 +1,873 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+  
+  body{
+/*     background: url('bg4.jpg'); */
+	
+  
+    margin: 0;
+   
+  
+
+   
+	color: #000;
+	
+    font-family: "Poppins", sans-serif;
+	/* margin: 0;
+	padding: 0 */
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+div.bottom a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+.logo{
+    color: orange;
+  margin-left: 20px;
+  margin-right: auto;
+  display: inline;
+  font-size: 28px; 
+}
+.blue{
+    color: blue;
+   
+}
+
+nav {
+	
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+
+}
+.dropdown {
+    float: right;
+    overflow: hidden;
+   
+    
+    
+    
+  }
+ .hamburger-button {
+    font-size: 16px;  
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: gray;
+    padding: 14px 16px;
+  display: none;
+  visibility: hidden;
+    font-family: inherit;
+    margin-top: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  .caret-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    vertical-align: middle;
+    position: relative;
+  }
+  .dropdown-content {
+     display:none ;  /* Use flexbox */
+     visibility: hidden;
+    flex-direction:column; /* Stack menu items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content:center; /* Center items vertically */
+    position: absolute;
+    background-color: #111;
+    min-width: 200px;
+    min-height: 90%;
+    right: 15px;
+    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+  
+.submenu {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .submenu ul li a {
+    display: block;
+    text-decoration: none;
+    line-height: 0;
+    color: black;
+  }
+  .submenu ul {
+    display: none;
+    position: absolute;
+    top: 50%; /* Align submenu to the middle of the parent */
+    right: 80%;/* Position submenu to the right of the parent */
+    transform: translateY(-50%); /* Adjust vertical position to center */
+    background-color: #f9f9f9;
+    min-width: 70px;
+ 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .submenu ul li {
+    text-align: center;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+  
+  .submenu:hover ul {
+    display:block;
+   
+  }
+  .submenu ul li a:hover {
+    background-color: #f1f1f1;
+  }
+
+
+.dropdown-content a {
+    padding: 20px 8px; /* Adjust padding as needed */
+    text-decoration: none;
+   
+    color: #818181;
+    visibility: hidden;
+ 
+}
+.dropdown-content a:hover {
+    color: #294b8a;
+  }
+  .dropdown:focus-within .dropdown-content {
+    display: flex; /* Show dropdown content when the dropdown or its descendants are focused */
+  }
+  
+  .dropdown:focus-within .hamburger-button {
+    background-color: gray; /* Change button color when the dropdown or its descendants are focused */
+  }
+ 
+
+    
+/* Define styles for the hamburger menu icon */
+
+.menu-items {
+   display: flex;
+   flex: 1;
+    justify-content: center; 
+   
+  
+  
+    
+  }
+nav ul {
+	padding: 0;
+     
+	list-style-type: none;
+	
+	}	
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+   justify-content: center;
+
+   align-items: center;
+   position: relative;
+	}
+nav a {
+    text-decoration: none;
+    color:grey;
+/* 	padding:0 10px;	
+	
+	font-size:20px;
+	line-height: 60px; */
+	font-size: large;
+}
+nav a:hover { 
+	color: black; 
+}
+nav ul ul {
+	display: none;
+	position: absolute; 
+		 
+}	
+nav ul li:hover > ul {
+	display:block;
+    position: absolute; /* Added */
+    left: 0; /* Added */
+    width: 100%; 
+}	
+nav ul ul li {
+	width:230px;
+	float:none;
+	display:list-item;
+	
+}
+nav ul ul ul li {
+
+	left:230px;
+}
+nav ul ul li {
+	border: none;
+    margin-top: auto;
+    
+}	
+li > a >span{ 
+    vertical-align: middle;
+    color: grey; }
+li > a:only-child:after { content: ''; }
+.ext{
+    position: relative;
+}
+
+
+
+.search {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    align-items: center; /* Align items vertically center */
+        justify-content: center;
+    width: 250px; /* Initial width */
+    transition: width 0.3s ease; /* Add transition for smooth animation */
+  }
+  
+   .search-input {
+    width: 100%;
+   text-align: center;
+  
+    padding: 11px 30px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 44px;
+    outline: none;
+  }
+  
+  /* Adjust the width when the input is focused */
+  .search:focus-within {
+    width: 250px; /* Expanded width */
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+  } 
+  
+.cart{
+    width: auto;
+    display: flex;
+ 
+    border-radius: 15px;
+    background-color: #f6f6f6;
+    border-color: #f6f6f6;
+    width: 50px;
+    height: 40px;
+   /*  margin-left: 3vw; */
+   /*  margin-top: 3vh; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cart .carticon{
+    color: blue;
+}
+.userprofile{
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.userprofile img{
+    width: 40%;
+    height: auto;
+}
+.search,
+.cart,
+.userprofile{
+    margin-left: 10px;
+}
+h1{
+    color: #111;
+   
+   
+    
+}
+.parent {
+  
+    display: flex; /* Use flexbox */ 
+    flex-direction: row;
+  
+    justify-content:flex-start;
+    align-items: flex-start;
+}
+table {
+    
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 10px;
+  
+  }
+  
+  
+  th, td {
+    padding: 18px;
+    text-align: left;
+    color: #000;
+  
+  }
+  th{
+    border-bottom: 1px solid gray; 
+  }
+  td{
+  
+    overflow: hidden;
+   
+    text-overflow: ellipsis;
+  }
+  .left{
+    /* Adjust width as needed */
+    width: 60%;
+  
+   /* Optional: Add padding for spacing */
+  }
+  .left{
+    
+
+top:0;
+margin-left: 50px;
+float: right;
+}
+  .rightparent{
+  top:0;
+  margin-right:30px;
+  margin-left: 160px;
+ margin-top: 70px;
+ 
+  }
+  .right{
+   display: flex;
+    border: 1px solid #ccc; 
+    border-radius: 25px;
+ width: 90%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+	margin-right: 20px;
+  float: right;
+  line-height: 25px;
+  justify-content: center;
+  }
+  .uname{
+    color: #000;
+  }
+  .coupon{
+margin-left: 15px;
+display: inline block;
+
+
+  }
+  input[type=text] {
+    width: auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 14px;
+  display: inline block;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+   
+  }
+  label {
+    display:block;
+    position:relative;
+    padding-left:2px; /* adjust if necessary */
+    }
+    label > span {
+    position:absolute;
+    left:0;
+    }
+ .apply{
+    padding: 10px 25px;
+    background-color: #2d98d2;
+    color: white;
+   border: none;
+   display: inline block;
+    border-radius: 30px;
+    cursor: pointer;
+ }
+b{
+    font-size: small;
+    font-weight: 300;
+}
+span.price {
+    float: right;
+    color: grey;
+  }
+  .para{
+    color: grey;
+  }
+  p:nth-child(5) {
+    color: #111;
+    font-weight: bolder;
+    font-size: large;
+  }
+  .heading{
+    padding: 10px 20px;
+  }
+ 
+.paynow{
+    padding: 12px 30px;
+    background-color: #d29e2d;
+    color: white;
+    margin-top: 10px;
+   border: none;
+ width:90%;
+ font-weight: bolder;
+float: right;
+    border-radius: 8px;
+    margin-right: 20px;
+    cursor: pointer;
+ }
+ 
+ .razorimg{
+    display: flex;
+    margin-left: 10px;
+  
+    justify-content:space-evenly
+    
+; /* Distribute space evenly between images */
+    align-items: center; 
+ }
+ .secure{
+    width: 8%; /* Set the width of each image to the desired logo size */
+    height: 8%; 
+ }
+ .razorpay{
+    width: 10%; /* Set the width of each image to the desired logo size */
+    height: 10%; 
+   align-items: center;
+ }
+.securelogo{
+    width: 5%; /* Set the width of each image to the desired logo size */
+    height: 5%; 
+}
+.bottom{
+    top:0;
+    
+   margin-bottom: 20px;
+    display: flex;
+  margin-left: 15px;
+    align-items:flex-start;
+    justify-content: flex-start;
+    float: left;
+
+}
+.caret{
+    width: 7%; /* Set the width of each image to the desired logo size */
+    height: 8%; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+   
+   
+    .hamburger-button {
+        display:block;
+        padding: 10px;
+        visibility: visible; /* Hide hamburger button */
+     
+    }
+
+    nav .menu-items { display: none; }
+    nav .dropdown { display: block; } 
+    nav ul li { margin: 10px; } 
+  
+    nav a { color: white; } 
+    nav a:hover { color: #818181; } 
+    .dropdown
+    { display: block; 
+}
+    .userprofile {
+        margin-left: 10px; /* Adjust margin for smaller screens */
+       
+    }
+    .dropdown-content {
+        visibility:visible;
+    }
+
+    .dropdown-content a {
+        visibility:visible;
+      
+    }
+    .search {
+        width: 100%; /* Adjust width to fit smaller screens */
+        margin-right: 9px; /* Remove right margin on smaller screens */
+    }
+
+    .search-input {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+    .cart{
+        display: none;
+    }
+    .search,
+.cart,
+.userprofile{
+    margin-left: 5px;
+}
+.logo {
+    font-size: 28px;
+    margin-left: 30px;
+    margin-right: auto;
+    align-items: flex-start;/* Adjust font size for smaller screens */
+  }
+  
+  .blue {
+    font-size: 30px; /* Adjust font size for smaller screens */
+  }
+  
+
+
+.parent {
+    flex-direction: column; /* Change layout to vertical stack */
+
+   align-items: center;
+    justify-content: center;
+    margin: 0; /* Center align items horizontally */
+  }
+  
+  .left, .rightparent {
+    width: 80%; /* Adjust width for smaller screens */
+    margin: 0; /* Remove margins */
+   
+  }
+ .heading{
+  padding: 0;
+ } 
+.h1{
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+}
+  .rightparent {
+    margin-top: 20px;
+   
+    /* Adjust margin for spacing */
+  }
+  .table{
+    width: 50%;
+   
+  }
+  th, td {
+    padding: 4px;
+    font-size: 12px;
+    line-height: 22px;
+  }
+.right{
+    width:100%;
+    max-width: 100%;
+    margin: 0;
+    justify-content: center;
+ 
+}
+
+  .bottom {
+float: left;
+padding-left: 10px;
+  }
+  .paynow{ 
+ width: 100%;
+ justify-content: center;
+ margin-right: 0px;
+ float: right;
+ 
+ }
+ .razorimg{
+    display: flex;
+   justify-content: center;
+  
+    justify-content:center; /* Distribute space evenly between images */
+    align-items: center; 
+ }
+}
+
+@media screen and (max-width: 535px) {
+  
+    
+     nav .menu-items { display: none; }
+     nav .dropdown { display: block; } 
+     nav ul li { margin: 10px; } 
+     .search {
+      width: 100%; /* Adjust width to fit smaller screens */
+     
+     /* Remove right margin on smaller screens */
+  }
+
+  .search-input {
+      font-size: 11px;
+      text-align:center;
+  
+      padding: 11px 15px 8px 40px;
+     /* Decrease font size for smaller screens */
+  }
+  
+     nav a { color: white; } 
+     nav a:hover { color: #818181; } 
+     .dropdown
+     { display: block; 
+}
+.hamburger-button 
+{ display: block; 
+    padding: 10px;
+    margin-right: 30px;
+   
+}
+.userprofile img{
+    width:35px;
+    height: 35px;
+}
+.userprofile {
+    padding: 12px; 
+    margin-top: 10px;/* Reduce padding for smaller screens */
+}
+
+.userprofile img {
+    width: 30px; /* Decrease image size for smaller screens */
+    height: 30px;
+}
+.cart{display: none;}
+.search,
+.cart,
+.userprofile{
+    margin-left: 2px;
+}
+.logo {
+    font-size: 25px;
+   margin: 0;
+  
+    align-items: flex-start;/* Adjust font size for smaller screens */
+  }
+  
+  .blue {
+    font-size: 27px; /* Adjust font size for smaller screens */
+  }
+.h1{
+  padding: 0;
+}  
+
+body{
+    overflow-y: scroll;
+  
+}
+.parent {
+    flex-direction: column; /* Change layout to vertical stack */
+    align-items: center; /* Center align items horizontally */
+  }
+  
+  .left, .rightparent {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 0; /* Remove margins */
+  
+  }
+ .heading{
+  margin-bottom: 10px;
+ }
+
+  .rightparent {
+    margin-top: 20px; /* Adjust margin for spacing */
+  }
+  .table{
+    width: 50%;
+  }
+  th, td {
+    padding: 4px;
+    font-size: 12px;
+  }
+.right{
+    width:100%;
+    max-width: 100%;
+    margin: 0;
+padding-right: 10px;
+    
+    justify-content: center;
+}
+input[type=text] {
+  width: 50%;
+  
+
+}
+.apply{width: auto;
+
+margin-left: 10px;
+padding: 12px;
+display: inline;}
+  .bottom {
+float: left;
+  }
+  .paynow{ 
+ width: 100%;
+ }
+ .razorimg{
+    display: flex;
+   justify-content: center;
+  
+    justify-content:center; /* Distribute space evenly between images */
+    align-items: center; 
+ }
+ .secure{
+  width: 15%; /* Set the width of each image to the desired logo size */
+  height: 15%; 
+}
+.razorpay{
+  width: 15%; /* Set the width of each image to the desired logo size */
+  height: 15%; 
+ align-items: center;
+}
+.securelogo{
+  width: 10%; /* Set the width of each image to the desired logo size */
+  height: 10%; 
+}
+}
+
+   
+
+
+@media screen and (min-width: 768px) and (max-width: 1082px) {
+    .hamburger-button {
+        visibility: hidden;
+    }
+  
+    .dropdown {
+        visibility: hidden;
+    }
+  
+    .dropdown-content {
+        visibility: hidden;
+    }
+  
+    .dropdown-content a {
+        visibility: hidden;
+    }
+    
+   .right{
+    display: flex;
+    flex-wrap: wrap;
+   float: right;
+  
+    margin-right: 20px;
+   }
+   
+  input[type=text] {
+    width: auto;/* Adjust the width of the input field */
+    padding: 10px;
+    display: flex;
+  
+    flex-direction: column;
+    flex-wrap: wrap; /* Adjust the padding */
+  }
+  .coupon{
+    display: flex;
+   flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .apply {
+    
+    width: auto;
+   display: flex;
+   flex-shrink: 0;
+   flex-direction: column;
+   flex-wrap: nowrap; /* Adjust the padding of the apply button */
+  }
+
+}
+
+ 
+  @media screen and (min-width: 768px) {
+    .left,
+    .rightparent {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .coupon{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 10px;
+    }
+   
+
+    .apply, input[type=text] {
+       width: auto;
+        display: inline-block;
+    }
+    input[type=text]{
+      width: auto;
+    }
+    
+  }

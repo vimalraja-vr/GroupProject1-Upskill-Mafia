@@ -1,0 +1,41 @@
+    .image-selector {
+	grid-column: 1/2;
+	overflow: hidden;
+  }
+  
+  .image-selector label {
+	height: 50px;
+	width: 60px;
+}
+  
+  .image-selector input {
+	position: absolute;
+	left: -999em;
+  }
+  
+  .image-selector input:checked ~ label img {
+	box-shadow: 0 0 0 1px steelblue;
+  }
+  
+  .image-selector img {
+	display: block;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .image-selector--display {
+	display: none;
+	position: absolute;
+	top: var(--spacing);
+	left: calc( var(--spacing)*3 + 33vw);
+	width: calc(64vw + var(--spacing)*2);
+	height: calc(100vh - var(--spacing)*2);
+  }
+  
+  .image-selector input:checked ~ .image-selector--display {
+	display: block;
+  }
+  
+  html, body {
+	margin: 0;
+  }
